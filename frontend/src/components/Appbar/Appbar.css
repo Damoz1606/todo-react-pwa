@@ -1,0 +1,17 @@
+.navbar {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.336);
+}
+
+.start {
+    left: 0 !important;
+    right: auto !important;
+}
+
+.end {
+    right: 0 !important;
+    left: auto !important;
+}
+
+.navbar-item {
+    margin: 0.5rem !important;
+}

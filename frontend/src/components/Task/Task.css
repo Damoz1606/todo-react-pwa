@@ -1,0 +1,183 @@
+.card {
+    border-radius: 5rem !important;
+}
+
+.task-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle !important;
+    position: relative;
+    height: 50px;
+}
+
+.task-notification,
+.task-checkbox,
+.task-delete {
+    margin: 0 0.25rem !important;
+}
+
+.task-notification span,
+.task-delete span {
+    cursor: pointer;
+    transition: all .3s ease !important;
+}
+
+.task-delete span {
+    color: rgba(255, 22, 22) !important;
+}
+
+.task-notification span {
+    color: var(--primary-color) !important;
+}
+
+.task-delete:hover,
+.task-notification:hover {
+    filter: brightness(80%)
+}
+
+.hover-hidden {
+    opacity: 0 !important;
+    transition: all .3s ease;
+}
+
+.task-card:hover .hover-hidden {
+    opacity: 1 !important;
+}
+
+.task-buttons-container {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    position: absolute;
+    right: 0;
+    left: auto;
+}
+
+.task-text {
+    width: 100%;
+    padding: 0 30% 0 0.25rem !important;
+}
+
+.task-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.checkbox {
+    border: 2px solid #ffff !important;
+    height: 24px;
+    width: 24px;
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 100px;
+    box-shadow: 0 0 50px inset#0000;
+    transition: all .3s ease;
+    border: 1px solid var(--primary-color) !important;
+}
+
+.icon-check {
+    position: absolute;
+    color: #ffff;
+}
+
+.checkbox:after {
+    content: "";
+    height: 0px;
+    width: 0px;
+    opacity: 1;
+}
+
+.task-checkbox input:checked~.checkbox {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+.task-checkbox input:hover~.checkbox {
+    background-color: var(--primary-color);
+    opacity: 0.5;
+}
+
+.task-checkbox input:active~.checkbox {
+    background-color: var(--primary-color);
+}
+
+.task-text {
+    transition: all .3s ease;
+}
+
+.strike {
+    position: relative;
+    opacity: 0.5;
+}
+
+.strike::after {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+    animation-name: strike;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes strike {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes strike {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+        -webkit-transform: scale(3);
+        -ms-transform: scale(3);
+    }
+}
+
+@-webkit-keyframes ripple {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+        -webkit-transform: scale(3);
+        -ms-transform: scale(3);
+    }
+}
